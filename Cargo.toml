@@ -1,0 +1,11 @@
+[package]
+name = "subtitle_translator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+subparse = "0.7.0"
+tokio = {version = "1.20.1", features = ["full"]}
+rustlate = {git = "https://gitlab.com/al386115/rustlate"}
