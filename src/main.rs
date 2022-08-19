@@ -3,7 +3,7 @@ use std::io::Write;
 use std::process::exit;
 use std::{fs::File,fs::read_to_string};
 use std::path::Path;
-use rustlate;
+use rustlate::{self, Translator};
 use std::io::stdin;
 
 
@@ -74,7 +74,7 @@ fn main() {
 }
 
 
-fn build_translator_struct(target_language : &str) -> rustlate::Translator{
+fn build_translator_struct(target_language : &str) -> Translator{
     let temp = rustlate::Translator{
         to:target_language,
         from:"auto"
