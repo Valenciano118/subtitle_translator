@@ -64,10 +64,10 @@ fn main() {
     }
     ssa_subtitle.update_subtitle_entries(&subs[..]).unwrap();
 
-
-    let mut file = File::create(format!("subtitle_{}.ass",target_translation_language.trim())).unwrap();
+    let filename = format!("subtitle_{}.ass",target_translation_language.trim());
+    let mut file = File::create(filename.clone()).unwrap();
     file.write_all(&ssa_subtitle.to_data().unwrap()[..]).unwrap();
-
+    println!("{} created",filename);
 
    
 
@@ -75,7 +75,7 @@ fn main() {
 
 
 fn build_translator_struct(target_language : &str) -> Translator{
-    let temp = rustlate::Translator{
+    let temp = Translator{
         to:target_language,
         from:"auto"
     };
